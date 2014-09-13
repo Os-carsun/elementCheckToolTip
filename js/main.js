@@ -6,12 +6,12 @@ var mouse = {
 var mouseClick = false;
 var currentElement = null;
 var body = document.getElementsByTagName('body')[0];
-//document.onmousedown
-function mouseTooltip(e, callback) {
+
+function mouseTooltip(e) {
 
     mouse.x = e.clientX || e.pageX;
     mouse.y = e.clientY || e.pageY;
-
+    console.log(">>"+mouseClick+"<<");
     if (mouseClick === true) return;
     currentElement = document.elementFromPoint(mouse.x, mouse.y);
     console.log(currentElement);
@@ -33,6 +33,7 @@ function mouseTooltip(e, callback) {
     }
     document.getElementsByName("innerText")[0].onchange = function(e) {
         currentElement.innerText = document.getElementsByName("innerText")[0].value;
+        mouseClick = false;
     }
     mouseClick = true;
     document.getElementsByClassName('coupontooltip')[0].ondblclick = function() {
