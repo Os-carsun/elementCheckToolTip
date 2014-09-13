@@ -20,9 +20,9 @@ function mouseTooltip(e, callback) {
 
 
     for (var i = 0, atts = currentElement.attributes, n = atts.length, arr = []; i < n; i++) {
-        content += atts[i].nodeName + " : <input type='text' name=" + atts[i].nodeName + " value=" + atts[i].value + "> <br>";
+        content += atts[i].nodeName + " : <input type='text' name=" + atts[i].nodeName + " value= ' "  + atts[i].value + "'> <br>";
     }
-    content += "innerTexture : <input type='text' name='innerText' value=" + currentElement.innerText.replace(/\s+/g, "_") + "> <br>";
+    content += "innerTexture : <input type='text' name='innerText' value='" + currentElement.innerText + "'> <br>";
     currentElement.innerHTML += " <span class=" + "coupontooltip" + ">" + content + "</span>";
     for (var i = 0, atts = currentElement.attributes, n = atts.length, arr = []; i < n; i++) {
         var node = atts[i];
