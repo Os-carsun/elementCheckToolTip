@@ -1,19 +1,11 @@
-.couponcode:hover .coupontooltip {
-    display: block;
-}
-
-
 .coupontooltip {
-    display: none;
+    display: block;
     background: #C8C8C8;
     margin-left: 28px;
     padding: 10px;
     position: absolute;
     z-index: 1000;
-    width:200px;
+    overflow: scroll;   
+    width:400px;
     /*height:100px;*/
-}
-
-.couponcode {
-    margin:100px;
 }
