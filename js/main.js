@@ -25,6 +25,7 @@ function mouseTooltip(e) {
     span.style.left=mouse.x;
     for (var i = 0, atts = currentElement.attributes, n = atts.length, arr = []; i < n; i++) {
         span.innerHTML+=atts[i].nodeName + " : <input type='text' name=" + atts[i].nodeName + " value= ' "  + atts[i].value + "'> <br>";
+        console.log(document.getElementsByName(atts[i].nodeName)[0]);
         //  document.getElementsByName(atts[i].nodeName)[0].onchange = function(e) {
         //     currentElement.setAttribute(e.srcElement.name, e.srcElement.value);
         // }
@@ -34,17 +35,12 @@ function mouseTooltip(e) {
         currentElement.innerText = document.getElementsByName("innerText")[0].value;
         mouseClick = false;
     }
-    currentElement.parentElement.innerHTML += " <span class=" + "coupontooltip" + ">" + content + "</span>";
     for (var i = 0, atts = currentElement.attributes, n = atts.length, arr = []; i < n; i++) {
         var node = atts[i];
         document.getElementsByName(node.nodeName)[0].onchange = function(e) {
             currentElement.setAttribute(e.srcElement.name, e.srcElement.value);
         }
     }
-    // document.getElementsByName("innerText")[0].onchange = function(e) {
-    //     currentElement.innerText = document.getElementsByName("innerText")[0].value;
-    //     mouseClick = false;
-    // }
     mouseClick = true;
     document.getElementsByClassName('coupontooltip')[0].ondblclick = function() {
         document.getElementsByClassName('coupontooltip')[0].remove();
